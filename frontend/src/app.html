@@ -4,7 +4,13 @@
 		<meta charset="utf-8" />
 		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
 		<meta name="viewport" content="width=device-width" />
+		<meta name="wails-options" content="noautoinject" />
+    	<script src="/wails/ipc.js"></script>
+    	<script src="/wails/runtime.js"></script>
 		%sveltekit.head%
+		<script defer src="../node_modules/@fortawesome/fontawesome-free/js/brands.js"></script>
+  		<script defer src="../node_modules/@fortawesome/fontawesome-free/js/solid.js"></script>
+  		<script defer src="../node_modules/@fortawesome/fontawesome-free/js/fontawesome.js"></script>
 	</head>
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents">%sveltekit.body%</div>
