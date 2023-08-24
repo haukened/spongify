@@ -8,6 +8,7 @@ import (
 	"github.com/wailsapp/wails/v2/pkg/logger"
 	"github.com/wailsapp/wails/v2/pkg/options"
 	"github.com/wailsapp/wails/v2/pkg/options/assetserver"
+	"github.com/wailsapp/wails/v2/pkg/options/linux"
 	"github.com/wailsapp/wails/v2/pkg/options/mac"
 	"github.com/wailsapp/wails/v2/pkg/options/windows"
 )
@@ -70,6 +71,7 @@ func main() {
 			// DisableFramelessWindowDecorations: false,
 			WebviewUserDataPath: "",
 			ZoomFactor:          1.0,
+			Theme:               windows.Dark,
 		},
 		// Mac platform specific options
 		Mac: &mac.Options{
@@ -89,6 +91,9 @@ func main() {
 				Message: APP_DESCRIPTION,
 				Icon:    icon,
 			},
+		},
+		Linux: &linux.Options{
+			Icon: icon,
 		},
 	})
 
