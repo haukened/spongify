@@ -1,4 +1,4 @@
-module changeme
+module spongify
 
 go 1.18
 
