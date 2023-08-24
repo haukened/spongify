@@ -1,5 +1,7 @@
 <script>
     import "../app.css";
 </script>
-  
-<slot />
+
+<div class="overflow-hidden flex flex-col items-center">
+    <slot />
+</div>

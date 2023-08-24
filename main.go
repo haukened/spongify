@@ -16,7 +16,7 @@ const (
 	APP_DESCRIPTION  = "add sarcasm to every conversation"
 	APP_DISPLAY_NAME = "Spongify!"
 	APP_NAME         = "spongify"
-	WINDOW_HEIGHT    = 150
+	WINDOW_HEIGHT    = 200
 	WINDOW_WIDTH     = 350
 )
 
@@ -53,7 +53,7 @@ func main() {
 		},
 		Menu:             nil,
 		Logger:           nil,
-		LogLevel:         logger.DEBUG,
+		LogLevel:         logger.WARNING,
 		OnStartup:        app.startup,
 		OnDomReady:       app.domReady,
 		OnBeforeClose:    app.beforeClose,
