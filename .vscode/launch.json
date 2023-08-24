@@ -2,24 +2,6 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Wails: Production spongify",
-      "type": "go",
-      "request": "launch",
-      "mode": "exec",
-      "program": "${workspaceFolder}/build/bin/spongify",
-      "preLaunchTask": "build",
-      "cwd": "${workspaceFolder}"
-    },
-    {
-      "name": "Wails: Debug spongify",
-      "type": "go",
-      "request": "launch",
-      "mode": "exec",
-      "program": "${workspaceFolder}/build/bin/spongify",
-      "preLaunchTask": "build debug",
-      "cwd": "${workspaceFolder}"
-    },
-    {
       "name": "Wails: Dev spongify",
       "type": "go",
       "request": "launch",
