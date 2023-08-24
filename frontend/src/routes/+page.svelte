@@ -1,6 +1,5 @@
-<script lang="ts">
-    import type { PageData } from "./$types";
-    export let data: PageData;
+<script>
+	import { goto } from "$app/navigation";
 </script>
-
-{data.greeting}
+<p>Oh hai! How did you get here?</p>
+<button class="btn btn-primary" on:click={() => goto("/about")}>Go Here Instead</button>
