@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
+	"log"
 	"runtime"
 	"spongify/internal/config"
 
@@ -100,5 +101,35 @@ func setupSystray(ctx context.Context) func() {
 }
 
 func showAbout(ctx context.Context) {
-	// here we need to navigate to the about page and then show it
+	height, width, err := getPrimaryScreenDimensions(ctx)
+	if err != nil {
+		log.Print(err)
+	}
+	// calculate the position of the window
+	if height != 0 && width != 0 {
+		X_POS := width - WINDOW_WIDTH - 50
+		Y_POS := height - WINDOW_HEIGHT - 150
+		// and position the window
+		wuntime.WindowSetPosition(ctx, X_POS, Y_POS)
+	}
+	// emit the navigation event to load the about page in the frontend
+	wuntime.EventsEmit(ctx, "navigate", "/about")
+	// give the page time to load
+	wuntime.WindowShow(ctx)
+}
+
+func getPrimaryScreenDimensions(c context.Context) (height int, width int, err error) {
+	screens, err := wuntime.ScreenGetAll(c)
+	if err != nil {
+		return
+	}
+	for _, screen := range screens {
+		if screen.IsPrimary {
+			height = screen.Height
+			width = screen.Width
+			return
+		}
+	}
+	err = fmt.Errorf("unable to detect primary screen")
+	return
 }
