@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+    .no-ring {
+        @apply outline-none focus:outline-none;
+    }
+}
